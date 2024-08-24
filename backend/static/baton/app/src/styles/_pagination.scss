@@ -1,0 +1,55 @@
+// scss-lint:disable PlaceholderInExtend
+.paginator {
+  @extend .clearfix;
+  overflow: auto;
+  padding-top: .5rem;
+  white-space: nowrap;
+
+  span,
+  a:not(.showall) {
+    background: var(--bs-baton-pagination-bg);
+    border: 1px solid var(--bs-baton-pagination-border-color);
+    color: var(--bs-baton-pagination-color);
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 !important;
+    text-align: center;
+    width: 40px;
+
+    &:hover {
+      background: var(--bs-baton-pagination-hover-bg);
+    }
+  }
+
+  .end {
+    @extend .me-3;
+  }
+
+  .this-page {
+    background: var(--bs-baton-pagination-selected-bg);
+    color: var(--bs-baton-pagination-selected-color);
+
+    &:hover {
+      background: var(--bs-baton-pagination-selected-bg);
+    }
+  }
+
+  .showall {
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-outline-primary;
+    @extend .ms-2;
+    margin-top: -5px;
+  }
+
+  input {
+    @extend .btn;
+    @extend .btn-success;
+    margin-top: -4px;
+
+    @include media-breakpoint-up(md) {
+      float: right;
+      margin-top: 0;
+    }
+  }
+}
