@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Checkout Portal</title>
+</head>
+<body>
+    <form method="POST" name="customerData" action="/payments/ccavResponseHandler">
+        {% csrf_token %}
+        <table width="40%" height="100" border="1" align="center">
+            <caption>
+                <font size="4" color="blue"><b>Checkout Portal</b></font>
+            </caption>
+
+            <tr>
+                <td>Amount</td>
+                <td><input type="text" name="amount" value="{{ amount }}" readonly /></td>
+            </tr>
+
+            <tr>
+                <td>Billing Tel:</td>
+                <td><input type="text" name="billing_tel" value="{{ phone_no }}" readonly /></td>
+            </tr>
+
+            <tr>
+                <td>Billing Email:</td>
+                <td><input type="text" name="billing_email" value="{{ email }}" readonly /></td>
+            </tr>
+
+            <tr>
+                <td>Shipping Name</td>
+                <td><input type="text" name="delivery_name" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>Shipping Address:</td>
+                <td><input type="text" name="delivery_address" value="{{ address }}" readonly /></td>
+            </tr>
+
+            <tr>
+                <td>Shipping Zip:</td>
+                <td><input type="text" name="delivery_zip" value="{{ pin }}" readonly /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Checkout" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
